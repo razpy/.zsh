@@ -33,3 +33,6 @@ if [ -f $ZENVPRIVATE ];then
 else 
   touch $ZENVPRIVATE
 fi
+
+## module envs
+source $ZDOTDIR/modules/env.sh
