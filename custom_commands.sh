@@ -21,3 +21,14 @@ function mkcd() {
 function chpwd() { 
   ls
 }
+
+## Powerline-goの関数
+function powerline_precmd() {
+  PS1="$($GOPATH/bin/powerline-go -error $? -jobs ${${(%):%j}:-0})"
+}
+function install_powerline_precmd() {
+  # precmdにpowerline_precmdが無ければ追加する
+  if !((${precmd_functions[(I)powerline_precmd]})) ;then
+    precmd_functions+=(powerline_precmd)
+  fi
+}
