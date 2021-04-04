@@ -37,7 +37,7 @@ function powerline_precmd() {
     local __ERT=$EPOCHREALTIME
     __DURATION="$(($__ERT - ${__TIMER:-__ERT}))"
   fi
-  PS1="$($GOPATH/bin/powerline-go -error $__ERRCODE -shell zsh -cwd-max-depth 3 -newline -duration $__DURATION -modules user,git,docker,time,newline,ssh,cwd,duration)"
+  PS1="$($GOPATH/bin/powerline-go -error $__ERRCODE -shell zsh -cwd-max-depth 3 -newline -duration $__DURATION -modules newline,user,git,docker,time,newline,ssh,cwd,duration)"
   unset __TIMER
 }
 function install_powerline_precmd() {
