@@ -28,7 +28,7 @@ function powerline_precmd() {
 }
 function install_powerline_precmd() {
   # precmdにpowerline_precmdが無ければ追加する
-  if !((${precmd_functions[(I)powerline_precmd]})) ;then
+  if ! ((${precmd_functions[(I)powerline_precmd]})) ;then
     precmd_functions+=(powerline_precmd)
   fi
 }

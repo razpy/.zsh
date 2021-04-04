@@ -1,2 +1,4 @@
-export GOPATH=$DEV/Go
-export PATH=$GOPATH/bin:$PATH
+
+if [ -f $HOME/.gvm/scripts/gvm ];then
+  source $HOME/.gvm/scripts/gvm
+fi
