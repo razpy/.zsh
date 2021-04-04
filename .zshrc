@@ -65,3 +65,6 @@ setopt AUTO_CD
 setopt RM_STAR_WAIT
 ## 補完候補リストの日本語を正しく表示
 setopt PRINT_EIGHT_BIT
+
+## modulesのアプリケーションを読み込み
+source $ZDOTDIR/modules/apps.sh
