@@ -72,3 +72,8 @@ cdpath=($HOME $DEV) # あらかじめcdpathを適当に設定しておく
 zstyle ':completion:*:cd:*' tag-order local-directories path-directories
 ### cd は親ディレクトリからカレントディレクトリを選択しないので表示させないようにする (例: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+### brew zsh-completionsで補完力をさらに上げてくれる
+if [ -e /usr/local/share/zsh-completions ]; then
+  export FPATH=/usr/local/share/zsh-completions:$FPATH
+fi
