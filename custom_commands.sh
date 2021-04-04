@@ -23,8 +23,22 @@ function chpwd() {
 }
 
 ## Powerline-goの関数
+zmodload zsh/datetime
+
+function preexec() {
+  __TIMER=$EPOCHREALTIME
+}
+
 function powerline_precmd() {
-  PS1="$($GOPATH/bin/powerline-go -error $? -jobs ${${(%):%j}:-0})"
+  local __ERRCODE=$?
+  local __DURATION=0
+
+  if [ -n $__TIMER ]; then
+    local __ERT=$EPOCHREALTIME
+    __DURATION="$(($__ERT - ${__TIMER:-__ERT}))"
+  fi
+  PS1="$($GOPATH/bin/powerline-go -error $__ERRCODE -shell zsh -cwd-max-depth 3 -newline -duration $__DURATION -modules user,git,docker,time,newline,ssh,cwd,duration)"
+  unset __TIMER
 }
 function install_powerline_precmd() {
   # precmdにpowerline_precmdが無ければ追加する
