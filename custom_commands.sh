@@ -6,7 +6,7 @@ alias ll='ls -la'
 alias grep='grep -G'
 ### 一括ファイル名変更（incrementalなファイルに限る)
 alias zmv='noglob zmv -W'
-
+alias mitmproxy='docker run --rm -it -v $DEV/.mitmproxy:/home/mitmproxy/.mitmproxy -p 8080:8080 mitmproxy/mitmproxy'
 ## functions
 ### cdするときにファイル名がないと作成する関数
 function mkcd() {
